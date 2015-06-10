@@ -4465,7 +4465,6 @@ out_free:
 	return ret;
 }
 
-// TheCrazyLex@PA apply upstream patch to automatically set slice_idle to 0
 static void cfq_registered_queue(struct request_queue *q)
 {
 	struct elevator_queue *e = q->elevator;
