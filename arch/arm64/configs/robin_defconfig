@@ -538,8 +538,11 @@ CONFIG_CRYPTO_AES_ARM64_CE_BLK=y
 CONFIG_CRYPTO_AES_ARM64_NEON_BLK=y
 CONFIG_CRYPTO_CRC32_ARM64=y
 CONFIG_QMI_ENCDEC=y
+<<<<<<< HEAD:arch/arm64/configs/robin_defconfig
+=======
 
 #Pop kernel features
 CONFIG_FB_MSM_MDSS_KCAL_CTRL=y
 CONFIG_SOUND_CONTROL_HAX_3_GPL=y
 CONFIG_WQ_POWER_EFFICIENT_DEFAULT=y
+>>>>>>> 6d7820f... boeffla_wl_blocker: add generic wakelock blocker driver v1.0.0:arch/arm64/configs/lineageos_ether_defconfig
