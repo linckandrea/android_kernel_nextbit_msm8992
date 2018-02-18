@@ -427,7 +427,6 @@ error_out:
 
 static void cpufreq_stats_update_policy_cpu(struct cpufreq_policy *policy)
 {
-<<<<<<< HEAD
 	struct cpufreq_stats *old;
 	struct cpufreq_stats *stat;
 	unsigned long flags;
@@ -440,30 +439,16 @@ static void cpufreq_stats_update_policy_cpu(struct cpufreq_policy *policy)
 		kfree(old->time_in_state);
 		kfree(old);
 	}
-=======
-	struct cpufreq_stats *last_stat, *new_stat;
->>>>>>> b0ff887... cpufreq: stats: Fix memory leaks when updating stats table
 
-	last_stat = per_cpu(cpufreq_stats_table, policy->last_cpu);
-	if (!last_stat)
+	if (!stat)
 		return;
 	pr_debug("Updating stats_table for new_cpu %u from last_cpu %u\n",
 			policy->cpu, policy->last_cpu);
-	new_stat = per_cpu(cpufreq_stats_table, policy->cpu);
-	if (new_stat) {
-		kfree(new_stat->time_in_state);
-		kfree(new_stat);
-	}
-
 	per_cpu(cpufreq_stats_table, policy->cpu) = per_cpu(cpufreq_stats_table,
 			policy->last_cpu);
 	per_cpu(cpufreq_stats_table, policy->last_cpu) = NULL;
-<<<<<<< HEAD
 	stat->cpu = policy->cpu;
 	spin_unlock_irqrestore(&cpufreq_stats_table_lock, flags);
-=======
-	last_stat->cpu = policy->cpu;
->>>>>>> b0ff887... cpufreq: stats: Fix memory leaks when updating stats table
 }
 
 static void cpufreq_powerstats_create(unsigned int cpu,
